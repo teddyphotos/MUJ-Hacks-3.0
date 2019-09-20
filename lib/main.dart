@@ -52,22 +52,40 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      
-      appBar: AppBar(
-        title: const Text('OrBis Sample'),
-        backgroundColor: Colors.redAccent
-      ),
-      
+           
       body: Center(
-        
-        child: _widgetOptions.elementAt(_selectedIndex),
-        
-        
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset("assets/images/Orbis.png"),
+            SizedBox(height: 100,),
+            Text(
+              "ORBIS",
+              style: TextStyle(
+                fontSize: 60.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.pink[500]
+                ),
+            ),
+            Text(
+              "The Revolutionary Enviroment App",
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue[500]
+              ),
+              textAlign: TextAlign.center,
+              )
+          ],
+        ),
       ),
       
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Orbis',style: TextStyle(color: Colors.black)),
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.warning),
             title: Text('Tips',style: TextStyle(color: Colors.black)),
@@ -77,7 +95,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text('News',style: TextStyle(color: Colors.black)),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.dialpad),
             title: Text('Carbon-Footprint',style: TextStyle(color: Colors.black),),
           ),
         ],
