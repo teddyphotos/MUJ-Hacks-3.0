@@ -1,6 +1,6 @@
-import 'dart:ui' as prefix0;
 
 import 'package:flutter/material.dart';
+import 'news.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,7 +25,7 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
@@ -43,49 +43,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     ),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _children = [News(), News(), News()];
+    void _onTabTapped(int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
     return Scaffold(
            
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset("assets/images/Orbis.png"),
-            SizedBox(height: 100,),
-            Text(
-              "ORBIS",
-              style: TextStyle(
-                fontSize: 60.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.pink[500]
-                ),
-            ),
-            Text(
-              "The Revolutionary Enviroment App",
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue[500]
-              ),
-              textAlign: TextAlign.center,
-              )
-          ],
-        ),
-      ),
+      body: _children[_selectedIndex],
       
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Orbis',style: TextStyle(color: Colors.black)),
-          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.warning),
             title: Text('Tips',style: TextStyle(color: Colors.black)),
@@ -101,7 +73,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
+        onTap: _onTabTapped,
       ),
     );
   }
