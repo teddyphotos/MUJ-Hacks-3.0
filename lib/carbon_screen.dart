@@ -1,5 +1,6 @@
+
+
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 
 class CarbonFootprint extends StatefulWidget {
@@ -10,15 +11,14 @@ class CarbonFootprint extends StatefulWidget {
 
 class _CarbonFootprintState extends State<CarbonFootprint> {
   
-  static String electricity,distance,fuel,liqour;
+  
   int rating;
+  int a1,a2,a3,a4;
+  double y=0;
   //  int ele = int.parse(electricity);
   //  int dis = int.parse(distance);
   //   int  result= ele*dis;
-
-
-  
-  @override
+   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
@@ -26,130 +26,277 @@ class _CarbonFootprintState extends State<CarbonFootprint> {
       body: Center(
         child:SingleChildScrollView(
                   child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-             
-             children: <Widget>[
-               Image.asset('assets/images/Orbis.png',height: 150.0,),
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+               Image.asset('assets/images/Orbis.png',height: 150.0),
                SizedBox(
-                  height: 20.0,
+                  height: 10.0,
                 ),
-              
-               
-               
-                Container(
-                  width: 330.0,
-                  child: TextField(
-                    
-                    
-                    keyboardType: TextInputType.number,
-                     decoration: InputDecoration(
-                    hintText: 'Enter the electricity consumed in kWh',
-                    hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18.0),
-                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
-                    focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white))
-                    ,
-                    ),
-                    
-                    style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),
-                     textAlign: TextAlign.center,
-                      onChanged: (value) {
-                      electricity = value;
-                    },
-                  ),
+                Text('How likey are you to use personal veichle in a week?',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize:17.0),),
+                 SizedBox(
+                  height: 10.0,
                 ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  width: 345.0,
-                  child: TextField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                    hintText: 'Enter the approx distance travelled overall',
-                     hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),
 
-                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
-                    focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white))
-                    ,
-                    ),
-                    
-                    style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20.0),
-                    textAlign: TextAlign.center,
-                    
-                    onChanged: (value) {
-                      distance = value;
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  width: 280.0,
-                  child: TextField(
-                    
-                    keyboardType: TextInputType.number,
-                     decoration: InputDecoration(
-                    hintText: 'Enter the fuel consumed in litres',
-                    hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18.0),
-                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 0.0),
-                    focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white))
-                    ,
-                        ),
-                    
-                    
-                    style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
-                     textAlign: TextAlign.center,
-                      onChanged: (value) {
-                      fuel = value;
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  width: 300.0,
-                  child: TextField(
-                    
-                    keyboardType: TextInputType.number,
-                     decoration: InputDecoration(
-                    hintText: 'Enter the intake of liquour in litres',
-                    hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
-                    contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                    focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white))
-                    ,
-                    ),
-                    
-                    style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
-                     textAlign: TextAlign.center,
-                      onChanged: (value) {
-                      fuel = value;
-                    },
-                  ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                RaisedButton(
-                  color: Colors.green[600],
-                  child: Text("Calculate",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0),),
-                  
-                  onPressed: (){
-                    setState(() {
-                      rating = Random().nextInt(9)+1;
-                    });
-                  },
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(child: Text('Your Rating is $rating',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30.0,color: Colors.white,),),)
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
                  
-                
-             ],
+                 children: <Widget>[
+                 
+                  ButtonTheme(
+                   minWidth: 10.0,
+
+                    child: RaisedButton(
+                     
+                     child: Text('1'),
+                     
+                     color:Colors.green,
+                     onPressed:(){
+                       a1=1;
+                     },
+                   ),
+                 ),
+                  ButtonTheme(
+
+                     minWidth: 10.0,
+                     child: RaisedButton(
+                     child: Text('2'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a1=2;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                                child: Text('3'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a1=3;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                     child: Text('4'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a1=4;
+                     },
+                 ),
+                  ),
+               ],),
+               SizedBox(
+                  height: 10.0,
+                ),
+                Text('How likey are you to turn off electric switches?',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize:17.0),),
+                 SizedBox(
+                  height: 10.0,
+                ),
+                //Text('AMan',style: TextStyle(color: Colors.white)),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 
+                 children: <Widget>[
+                 
+                  ButtonTheme(
+                   minWidth: 10.0,
+
+                    child: RaisedButton(
+                     
+                     child: Text('1'),
+                     
+                     color:Colors.green,
+                     onPressed:(){
+                       a2=1;
+                     },
+                   ),
+                 ),
+                  ButtonTheme(
+
+                     minWidth: 10.0,
+                     child: RaisedButton(
+                     child: Text('2'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a2=2;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                                child: Text('3'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a2=3;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                     child: Text('4'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a2=4;
+                     },
+                 ),
+                  ),
+               ],),
+               SizedBox(
+                  height: 10.0,
+                ),
+                Text('How likey are you to burn your trash?',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize:20.0),),
+                 SizedBox(
+                  height: 10.0,
+                ),
+
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 
+                 children: <Widget>[
+                 
+                  ButtonTheme(
+                   minWidth: 10.0,
+
+                    child: RaisedButton(
+                     
+                     child: Text('1'),
+                     
+                     color:Colors.green,
+                     onPressed:(){
+                       a3=1;
+                     },
+                   ),
+                 ),
+                  ButtonTheme(
+
+                     minWidth: 10.0,
+                     child: RaisedButton(
+                     child: Text('2'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a3=2;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                                child: Text('3'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a3=3;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                     child: Text('4'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a3=4;
+                     },
+                 ),
+                  ),
+               ],),
+               SizedBox(
+                  height: 10.0,
+                ),
+                Text('How likey are you to drive ina week?',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize:20.0),),
+                 SizedBox(
+                  height: 10.0,
+                ),
+
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 
+                 children: <Widget>[
+                 
+                  ButtonTheme(
+                   minWidth: 10.0,
+
+                    child: RaisedButton(
+                     
+                     child: Text('1'),
+                     
+                     color:Colors.green,
+                     onPressed:(){
+                       a4=1;
+                     },
+                   ),
+                 ),
+                  ButtonTheme(
+
+                     minWidth: 10.0,
+                     child: RaisedButton(
+                     child: Text('2'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a4=2;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                                child: Text('3'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a4=3;
+                     },
+                 ),
+                  ),
+                  ButtonTheme(
+                    minWidth: 10.0,
+                    child: RaisedButton(
+                     child: Text('4'),
+                     color:Colors.green,
+                     onPressed:(){
+                       a4=4;
+                     },
+                 ),
+                  ),
+                  
+
+               ],
+               
+               
+
+               ),
+              
+              SizedBox(height: 10.0,),
+              
+              RaisedButton(
+                child: Text('CALCULATE'),
+                onPressed: (){
+                  y=(a1+a2+a3+a4)*0.625;
+                  print(y);
+                   setState(() {
+                     
+                   Text('The Rating  Is $y',style: TextStyle(color:Colors.white),);
+                     
+                   });
+                  
+                  
+
+                },
+
+              ),
+              Text('Aman',style: TextStyle(color: Colors.white),)
+              
+            ],
+              
+
+
+             
+             
              
       ),
+      
         ),
       ),
     );
