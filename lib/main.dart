@@ -58,8 +58,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: _children[_selectedIndex],
       
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.transparent,
+        //selectedItemColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            
             icon: Icon(Icons.warning),
             title: Text('Tips',style: TextStyle(color: Colors.black)),
           ),
@@ -73,7 +76,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blue[900],
         onTap: _onTabTapped,
       ),
     );
