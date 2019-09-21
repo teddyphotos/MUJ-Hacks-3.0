@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1016800207153",
+    "firebase_url": "https://orbis-hackathon-71ebe.firebaseio.com",
+    "project_id": "orbis-hackathon-71ebe",
+    "storage_bucket": "orbis-hackathon-71ebe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016800207153:android:d8cd3952fc1861a48f1010",
+        "android_client_info": {
+          "package_name": "com.example.orbis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016800207153-7tij9ojie3vjnk5059uui5fn0uodol56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7yqoYPPgu5SH9wsroe4S3pWMdShNKo5s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016800207153-7tij9ojie3vjnk5059uui5fn0uodol56.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1016800207153-cealb3m5tl0ib3iqs4t36uia9lo73465.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.orbis"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

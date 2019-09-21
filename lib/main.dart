@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'news.dart';
 import 'carbon_screen.dart';
+import 'tips.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,7 +48,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final List<Widget> _children = [News(), News(), CarbonFootprint()];
+    final List<Widget> _children = [Tips(), News(), CarbonFootprint()];
     void _onTabTapped(int index) {
       setState(() {
         _selectedIndex = index;
